@@ -95,7 +95,7 @@ const Widget = () => {
 
                 {/* Textarea */}
                 <textarea
-                  className="flex-1 bg-transparent text-white text-base outline-none resize-none pl-14 pr-14 py-4 max-h-[200px] overflow-y-auto no-scrollbar ml-4"
+                  className="flex-1 bg-transparent text-white text-xs sm:text-sm md:text-base outline-none resize-none pl-14 pr-14 py-4 max-h-[200px] overflow-y-auto no-scrollbar ml-4 placeholder:text-sm md:placeholder:text-base "
                   placeholder="I am feeling stressed today, can you help me?"
                   onChange={(e) => setInput(e.target.value)}
                   value={input}
