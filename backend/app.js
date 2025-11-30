@@ -10,7 +10,10 @@ app.use(
       "http://localhost:5173",
       /^chrome-extension:\/\/.+/,
       "https://duo-drive-ext.vercel.app",
+      "https://duo.ash404.me",
+      "https://duodrive-backend-production.up.railway.app",
     ],
+    credentials: true,
   })
 );
 app.use(express.json());
@@ -23,8 +26,10 @@ app.use(
 );
 
 // Route declaration
-import responseRouter from "../backend/router/generate-response.router.js";
+import healthRouter from "./router/health.router.js";
+import responseRouter from "./router/generate-response.router.js";
 
+app.use("/api", healthRouter);
 app.use("/api/v1", responseRouter);
 
 export default app;
